@@ -96,6 +96,7 @@ func ordenar_codigo(codigo_ordenado, texto, cantidad_maxima_saltos, mas_opciones
 	corriendo_problema = true
 
 func _ready():
+	$AnimationPlayer.play("Entrada")
 	if saved_nivel == 0 and saved_mapa == 1:
 		follow.set_offset(0)
 		position = 0
@@ -118,7 +119,6 @@ func _ready():
 		punto3 = true
 		punto4 = true
 		siguiente_mapa = true
-	$AnimationPlayer.play("Entrada")
 
 func _process(delta):
 	if Input.is_action_pressed("ui_unlock"):
@@ -314,17 +314,29 @@ func save_game(mapa, nivel):
 func _on_ticket_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.is_pressed():
 		if not seleccionado:
-			seleccionado = true
-			var node = scene.instance()
-			add_child(node)
-			node.connect("done", self, "mostrar_texto")
 			if position == 0:
+				seleccionado = true
+				var node = scene.instance()
+				add_child(node)
+				node.connect("done", self, "mostrar_texto")
 				problema = 0
 			elif position == 386:
+				seleccionado = true
+				var node = scene.instance()
+				add_child(node)
+				node.connect("done", self, "mostrar_texto")
 				problema = 1
 			elif position == 614:
+				seleccionado = true
+				var node = scene.instance()
+				add_child(node)
+				node.connect("done", self, "mostrar_texto")
 				problema = 2
 			elif position == 756:
+				seleccionado = true
+				var node = scene.instance()
+				add_child(node)
+				node.connect("done", self, "mostrar_texto")
 				problema = 3
 #final = 861.42
 func _on_Siguiente_Mapa_input_event(viewport, event, shape_idx):

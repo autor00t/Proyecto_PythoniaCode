@@ -109,6 +109,7 @@ func mostrar_texto():
 		$Control/Panel/Label.text = texto_puente[0]
 
 func _ready():
+	$AnimationPlayer.play("Entrada")
 	if saved_nivel == 0 and saved_mapa == 0:
 		follow.set_offset(285)
 		position = 285
@@ -133,7 +134,6 @@ func _ready():
 		siguiente_mapa = true
 		$Control/fondo_arriba.visible = false
 		$Control/fondo_abajo.visible = true
-	$AnimationPlayer.play("Entrada")
 
 func _process(delta):
 	if Input.is_action_pressed("ui_unlock"):
